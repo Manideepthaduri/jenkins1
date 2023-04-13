@@ -1,24 +1,24 @@
 node {
     stage('git clone') { 
-	 sh 'https://github.com/Manideepthaduri/ks.git'
+	sh git 'https://github.com/Manideepthaduri/ks.git'
     }
     stage('maven clean') {
-	 sh 'mvn clean'
+	sh 'mvn clean'
     }
     stage('maven validate') {
-	 sh 'mvn validate'
+	sh 'mvn validate'
     }
     stage('maven compile') {
      sh 'mvn compile'
     }
     stage('maven test') {
-	 sh 'mvn test'
+	sh 'mvn test'
     }
     stage('maven package') {
-	 sh 'mvn package'
+	sh 'mvn package'
     }
     stage('maven deployment') {
-	 sh 'mvn deploy'
+	sh 'mvn deploy'
 	}
   }
    
