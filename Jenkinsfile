@@ -1,6 +1,6 @@
 node {
     stage('git clone') { 
-	git branch: 'main', url: 'https://github.com/Manideepthaduri/ks.git'
+	git branch: 'main', url: sh 'https://github.com/Manideepthaduri/ks.git'
     }
     stage('maven clean') {
 	 sh 'mvn clean'
@@ -18,7 +18,7 @@ node {
 	 sh 'mvn package'
     }
     stage('maven deployment') {
-	  sh 'mvn deploy'
+	 sh 'mvn deploy'
 	}
   }
    
