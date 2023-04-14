@@ -20,6 +20,6 @@ node {
     stage('maven deployment') {
 	 sh 'mvn deploy'
 	}
-  }
+ }
    
      
