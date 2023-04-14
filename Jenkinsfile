@@ -1,6 +1,6 @@
 node {
     stage('git clone') { 
-	git 'https://github.com/jenkins-docs/simple-java-maven-app.git'
+	git branch: 'main', url: 'https://github.com/Manideepthaduri/ks.git'
 	}
     stage('maven clean') {
 	 sh 'mvn clean'
