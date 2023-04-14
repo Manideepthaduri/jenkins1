@@ -3,9 +3,6 @@ node {
 	git branch: 'main', url: 'https://github.com/Manideepthaduri/ks.git'
     
 	}
-	stage('maven version') {
-	 sh 'mvn version'
-    }
     stage('maven clean') {
 	 sh 'mvn clean'
     }
