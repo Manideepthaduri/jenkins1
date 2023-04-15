@@ -1,6 +1,6 @@
 node {
     stage('git clone') { 
-	git branch: 'main', url: 'https://github.com/Manideepthaduri/ks.git'
+	git branch: 'main', url: 'https://github.com/Manideepthaduri/ganesha.git'
 	
 	}
     stage('maven version') {
