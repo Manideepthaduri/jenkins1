@@ -1,36 +1,47 @@
-node {
-    stage('git clone') { 
-	git branch: 'main', url: 'https://github.com/Manideepthaduri/ks.git'
-	
-	}
-    stage('maven version') {
-	sh 'mvn --version'
-    
-	}
-    stage('maven clean') {
-	sh 'mvn clean'
-    
-	}
-    stage('maven validate') {
-	sh 'mvn validate'
-    
-	}
-    stage('maven compile') {
-    sh 'mvn compile'
-    
-	}
-    stage('maven test') {
-	sh 'mvn test'
-    
-	}
-    stage('maven package') {
-	sh 'mvn package'
-    
-	}
-    stage('maven deployment') {
-	sh 'mvn deploy'
-	}
 
+pipeline {
+    agent any
+
+    tools {
+       maven 'Apache Maven 3.9.1'
+    }
+
+    stages {
+        stage('git clone') {
+            steps {
+             git branch: 'main', url: 'https://github.com/Manideepthaduri/ks.git'
+            }
+        }
+		stage('Maven Clean')
+		{
+		  steps {
+		  sh 'mvn clean'
+		  }
+		}
+		stage('Maven Test')
+		{
+		  steps {
+		  sh 'mvn test'
+		  }
+		}
+		stage('Maven compile')
+		{
+		  steps {
+		  sh 'mvn compile'
+		  }
+		}
+				
+		stage('Maven Package')
+		{
+		  steps {
+		  sh 'mvn package'
+		  }
+		}
+		stage('Maven Deploy')
+		{
+		  steps {
+		  sh 'mvn deploy'
+		  }
+		}
+	}
 }
-   
-     
