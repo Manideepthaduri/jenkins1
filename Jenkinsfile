@@ -2,44 +2,44 @@ pipeline {
     agent any
 
     tools {
-       maven 'Apache Maven 3.9.3'
+       maven 'maven-3.9.3'
     }
 
     stages {
         stage('git clone') {
             steps {
-             git branch: 'main', url: 'https://github.com/Manideepthaduri/ksmanideep.git'
+            bat git branch: 'main', url: 'https://github.com/Manideepthaduri/ks.git'
             }
         }
 		stage('Maven Clean')
 		{
 		  steps {
-		  sh 'mvn clean'
+		  bat 'mvn clean'
 		  }
 		}
 		stage('Maven Test')
 		{
 		  steps {
-		  sh 'mvn test'
+		  bat 'mvn test'
 		  }
 		}
 		stage('Maven compile')
 		{
 		  steps {
-		  sh 'mvn compile'
+		  bat 'mvn compile'
 		  }
 		}
 				
 		stage('Maven Package')
 		{
 		  steps {
-		  sh 'mvn package'
+		  bat 'mvn package'
 		  }
 		}
 		stage('Maven Deploy')
 		{
 		  steps {
-		  sh 'mvn deploy'
+		  bat 'mvn deploy'
 		  }
 		}
 	}
