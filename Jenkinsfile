@@ -17,8 +17,7 @@ pipeline {
 		  bat 'mvn clean'
 		  }
 		}
-		stage ('SonarQube Scan')
-		{
+		stage ('SonarQube Scan') {
 		  steps {
 		  bat mvn sonar:sonar \
 		  -Dsonar.host.url=http://52.87.174.106:9000 \
