@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-            bat git branch: 'main', url: 'https://github.com/Manideepthaduri/ks.git'
+            bat git branch: 'main', credentialsId: 'ksmani2', url: 'https://github.com/Manideepthaduri/ks.git'
             }
         }
 		stage('Maven Clean')
