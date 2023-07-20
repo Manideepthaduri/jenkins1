@@ -14,40 +14,32 @@ pipeline {
 		stage('Maven Clean')
 		{
 		  steps {
-		  bat 'mvn clean'
-		  }
-		}
-		stage ('SonarQube Scan')
-		{
-		  steps {
-		  bat 'mvn sonar:sonar \
-			  -Dsonar.host.url=http://52.87.174.106:9000 \
-			  -Dsonar.login=cec1830c5478df968ed004e57143377eba54daa1'
+		  sh 'mvn clean'
 		  }
 		}
 		stage('Maven Test')
 		{
 		  steps {
-		  bat 'mvn test'
+		  sh 'mvn test'
 		  }
 		}
 		stage('Maven compile')
 		{
 		  steps {
-		  bat 'mvn compile'
+		  sh 'mvn compile'
 		  }
 		}
 				
 		stage('Maven Package')
 		{
 		  steps {
-		  bat 'mvn package'
+		  sh 'mvn package'
 		  }
 		}
 		stage('Maven Deploy')
 		{
 		  steps {
-		  bat 'mvn deploy'
+		  sh 'mvn deploy'
 		  }
 		}
 	}
