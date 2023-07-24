@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     tools {
-       maven 'maven-3.9.3'
+       maven 'Maven 3.9.3'
     }
 
     stages {
         stage('git clone') {
             steps {
-            git branch: 'main', url: 'https://github.com/Manideepthaduri/ksmanideep.git'
+            git branch: 'main', url: 'https://github.com/Manideepthaduri/ks.git'
             }
         }
 		stage('Maven Clean')
